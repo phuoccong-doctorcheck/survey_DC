@@ -1,0 +1,27 @@
+.wrapper-box-images {
+
+    width: 90vw;
+    overflow-x: scroll;
+    margin-top: 6px;
+
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    > * {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 6px;
+        margin: 6px 0;
+        overflow-x: auto;
+        width: max-content;
+    }
+
+    img {
+        width: 150px;
+        max-width: unset;
+        object-fit: contain;
+    }
+}
