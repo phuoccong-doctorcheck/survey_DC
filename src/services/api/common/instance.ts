@@ -2,10 +2,10 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
 import Cookies from "js-cookie";
 
-const axiosInstance1 = axios.create({
+const axiosInstance = axios.create({
   baseURL: "https://services.doctorcheck.online/api",
 });
-const axiosInstance = axios.create({
+const axiosInstance1 = axios.create({
   baseURL: "https://stagin-dev.doctorcheck.online/api",
 });
 
