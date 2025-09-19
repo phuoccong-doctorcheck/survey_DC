@@ -12,8 +12,8 @@ const axiosInstance1 = axios.create({
 axiosInstance.interceptors.request.use(
   ($config) => {
     if ($config.headers) {
-      $config.headers['App-Id'] = "29466071-c098-4540-9e62-deb51f2980a7";
-      $config.headers['App-Key'] = "Eo0F84c3aznGv9Nx2v7Y1n2g3edy82nIwzbRlDC92899";
+      $config.headers['App-Id'] = "514498269537899";
+      $config.headers['App-Key'] = "9Qqwgqx9yVKy5QVaV7yW";
     }
     return $config;
   },
