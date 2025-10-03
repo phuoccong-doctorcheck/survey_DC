@@ -44,7 +44,6 @@ const VerifyProfileCustomer: React.FC = () => {
  
 
 
-console.log(formData.email === "")
 
   const [searchParams] = useSearchParams();
   const r = searchParams.get("r");
@@ -64,7 +63,6 @@ console.log(formData.email === "")
           const convertProvince: any[] = [];
           
           data.data.map((i: any) => { const province = { key: i.id, label: i.name, value: i.id }; convertProvince.push(province); });
-          console.log(convertProvince)
           setListProvince([...convertProvince]);
            
 
@@ -89,7 +87,6 @@ console.log(formData.email === "")
         },
       }
   );
-  console.log(formData)
        // React Query lấy danh sách phường, xã
     const { mutate: getWards } = useMutation(
       "post-footer-form",
@@ -97,7 +94,6 @@ console.log(formData.email === "")
       onSuccess: (data) => {
         const convertWard: any[] = [];
          data.data.map((i: any) => { const ward = { key: i.id, label: i.name, value: i.id }; convertWard.push(ward); });
-         console.log(data,convertWard)
         setListWard([...convertWard]);
       },
       onError: (err) => {
@@ -121,7 +117,6 @@ console.log(formData.email === "")
     (data: any) => getAppointment(data),
     {
       onSuccess: async (data) => {
-        console.log(data)
         if (data?.status) {
           
          
@@ -147,12 +142,10 @@ console.log(formData.email === "")
     (data: any) => getAppointment(data),
     {
       onSuccess: async (data) => {
-        console.log(data)
         if (data?.status) {
           const selectedProvince = listProvice?.find((province:any) => province.value === data.data.client.province_id);
           const selectedDistrict = listDistrict?.find((district: any) => district.value === data.data.client.district_id);
           const selectedWard = listWard?.find((ward: any) => ward.value === data.data.client.ward_id);
-          console.log(listProvice)
           setFormData(
             {
               ...formData,
@@ -191,11 +184,8 @@ console.log(formData.email === "")
     }
   );
 
-  console.log(listWard,listDistrict)
   useEffect(() => {
-  console.log(listWard)
   if ((listWard && listWard.length > 0)) {
-    console.log(1234)
     const request = {
      master_id: r
     };

@@ -110,14 +110,12 @@ const CheckInPage: React.FC = () => {
     // Kiểm tra ngày sinh
     
       if (!birthDate.year?.toString() || isNaN(Number(birthDate.year)) || birthDate.year?.toString().length !== 4 || Number(birthDate.year) < 1900 || Number(birthDate.year) > new Date().getFullYear()) {
-    console.log(birthDate.year ,isNaN(Number(birthDate.year)) , birthDate.year.length !== 4 , Number(birthDate.year) < 1900 , Number(birthDate.year) > new Date().getFullYear())
         toast.error("Vui lòng nhập năm hợp lệ (VD: 1990)");
          newErrors.year = "Vui lòng nhập năm hợp lệ (VD: 1990";
     yearRef.current?.focus();
    
   }
        if (!birthDate.month?.toString() || isNaN(Number(birthDate.month)) || Number(birthDate.month) < 1 || Number(birthDate.month) > 12) {
-       console.log(birthDate.year ,isNaN(Number(birthDate.year)) , birthDate.year.length !== 4 , Number(birthDate.year) < 1900 , Number(birthDate.year) > new Date().getFullYear())
          toast.error("Vui lòng nhập tháng hợp lệ (1-12)");
            newErrors.month = "Vui lòng nhập tháng hợp lệ (1-12)";
     monthRef.current?.focus();
@@ -178,7 +176,6 @@ const CheckInPage: React.FC = () => {
         },
       }
   );
-  console.log(formData)
        // React Query lấy danh sách phường, xã
     const { mutate: getWards } = useMutation(
       "post-footer-form",
@@ -389,7 +386,6 @@ const CheckInPage: React.FC = () => {
     option: any,
     type: string
     ) => {
-      console.log(option)
     switch (type) {
 
       case "city":

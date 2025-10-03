@@ -191,7 +191,6 @@ export function handleConvertPCD(data: any) {
       newData.push(newGroup);
     }
   });
-  console.log(newData);
   return newData;
 }
 
@@ -294,7 +293,6 @@ const ResultPage: React.FC = () => {
       onSuccess: async (data) => {
         if (data?.status) {
           //  setStateItemCates(data?.data?.items ?? []);
-          console.log(data);
           dataEX1.push({
             service_group_type: dataST,
             id: dataE,
@@ -319,7 +317,6 @@ const ResultPage: React.FC = () => {
     "post-footer-form",
     (data: any) => {
       const { type, ...prevData } = data;
-      console.log(type);
       switch (type) {
         case "PCD":
           return postPrintServicepoint({ master_id: prevData?.master_id });
@@ -372,7 +369,6 @@ const ResultPage: React.FC = () => {
   );
   const [stateId, setStateId] = useState<string | null>(null);
   const handlePrintCategory = async (data: any, master: any) => {
-    console.log(data, master);
     const bodyPublic = {
       type: data.service_group_type,
       master_id: master,
@@ -422,7 +418,6 @@ const ResultPage: React.FC = () => {
 
   const [, setStateMasterID] = useState<string | null>(null);
   const handlePrintAllResult = async (data: any) => {
-    console.log(data);
     setLoadingAPID(true);
     const body = {
       customer: stateCustomer,
@@ -518,7 +513,6 @@ const ResultPage: React.FC = () => {
   ) => {
     const groupKey = `${session.master_id}_${group.group_result_id}`;
     toggleGroup(groupKey);
-    console.log(group, session);
     if (!group.items) {
       setType(group.group_result_id);
       setLoadingItem(true);
@@ -531,7 +525,6 @@ const ResultPage: React.FC = () => {
     }
   };
   const handleReturnData = (type: any, isChild: boolean) => {
-    console.log(type);
     switch (type) {
       case "PCD":
         return {

@@ -140,7 +140,6 @@ const Authentication: React.FC = () => {
   };
    const [listProvince, setListProvince] = useState<AddressData[]>();
   const [listDistrict, setListDistricts] = useState<AddressData[]>(); 
-  console.log(listDistrict,listProvince,formData)
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [listWard, setListWard] = useState<AddressData[]>();
     const [listProvinceOld, setListProvinceOld] = useState<AddressData[]>();
@@ -246,7 +245,7 @@ const Authentication: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
    
-    e.preventDefault();console.log(formData)
+    e.preventDefault();
     if (validate()) {
        setLoading(true)
     const data = {
@@ -268,7 +267,6 @@ const Authentication: React.FC = () => {
       
       }
     }
-     console.log(data)
        postSaveInfo(data)
     }
   };

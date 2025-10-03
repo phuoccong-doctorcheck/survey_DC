@@ -145,7 +145,6 @@ const overlayStyle: React.CSSProperties = {
       onSuccess: async (data) => {
       
         if (data?.status) {
-          console.log(data)
           
             setSurveyData(data.data.survey)
             setData(data.data)
