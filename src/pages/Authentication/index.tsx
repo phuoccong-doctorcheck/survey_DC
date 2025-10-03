@@ -94,9 +94,9 @@ const Authentication: React.FC = () => {
      if (!formData.districtOld && isAddressOld ) newErrors.districtOld = "Quận/Huyện là bắt buộc";
      if (!formData.cityOld && isAddressOld) newErrors.cityOld = "Thành phố/Tỉnh là bắt buộc";
     if (!formData.wardOld && isAddressOld) newErrors.wardOld = "Phường xã là bắt buộc";
-     if (!formData.district && !isAddressOld) newErrors.district = "Quận/Huyện là bắt buộc";
+     if (!formData.district && !isAddressOld) newErrors.district = "Phường xã là bắt buộc";
      if (!formData.city && !isAddressOld) newErrors.city = "Thành phố/Tỉnh là bắt buộc";
-     if (!formData.ward && !isAddressOld ) newErrors.ward = "Phường xã là bắt buộc";
+    // if (!formData.ward && !isAddressOld ) newErrors.ward = "Phường xã là bắt buộc";
     if (!formData.phone) {
     newErrors.phone = "SĐT là bắt buộc";
     }
@@ -246,7 +246,7 @@ const Authentication: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
    
-    e.preventDefault();
+    e.preventDefault();console.log(formData)
     if (validate()) {
        setLoading(true)
     const data = {
@@ -268,7 +268,7 @@ const Authentication: React.FC = () => {
       
       }
     }
-     
+     console.log(data)
        postSaveInfo(data)
     }
   };
